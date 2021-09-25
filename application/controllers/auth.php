@@ -27,7 +27,7 @@ class Auth extends CI_Controller{
 				$this->session->set_userdata('role_id',$auth->role_id);
 
 				switch($auth->role_id){
-					case 1 : redirect('admin/data_berita');
+					case 1 : redirect('admin/data_informasi');
 						break;
 					default: break;
 				}
@@ -40,6 +40,6 @@ class Auth extends CI_Controller{
 		public function logout()
 		{
 			$this->session->sess_destroy();
-			redirect('dasboard');
+			redirect('admin');
 		}
 	}

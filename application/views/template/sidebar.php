@@ -33,12 +33,9 @@
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?php echo base_url('itas')  ?>">ITAS</a>
-                        <a class="collapse-item" href="<?php echo base_url('paspor') ?>">PASPOR</a>
-                        <a class="collapse-item" href="<?php echo base_url('erp') ?>">ERP</a>
-                         <a class="collapse-item" href="<?php echo base_url('EPO')  ?>">EPO (Exit Permit Only)</a>
-                        <a class="collapse-item" href="<?php echo base_url('LN')  ?>">Lapor Nikah</a>
-                        <a class="collapse-item" href="<?php echo base_url('LL')  ?>">Lapor Lahir</a>
+                        <?php foreach ($informasi as $list) {?>
+                        <a class="collapse-item" href="<?php echo base_url('dasboard/detail_informasi/')  ?><?= $list->id_informasi ?>"><?= $list->nama_dokumen ?></a>
+                        <?php } ?>
                     </div>
                 </div>
             </li>
@@ -109,17 +106,5 @@
                             </div>
                         </li>
                     </ul> 
-           
-                    <ul class="na navbar-nav navbar-right" >
-                        <?php if($this->session->userdata('username')) { ?>
-                        <li><div> Selamat Datang <?php echo $this->session->userdata('username') ?></div></li>
-                        <li class="ml-3"><?php echo anchor('auth/logout','Logout') ?></li>
-                    <?php } else { ?>
-                    <li><?php echo anchor('auth/login','Login'); ?></li>
-
-                    <?php } ?>
-
-                    </ul>
-
                 </nav>
                 <!-- End of Topbar -->

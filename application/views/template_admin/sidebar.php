@@ -20,6 +20,12 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
+            <!-- Nav Item - informasi -->
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo base_url('admin/data_informasi')  ?>">
+                    <span>Informasi</span></a>
+            </li>
+
             <!-- Nav Item - edit barang -->
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo base_url('admin/data_berita')  ?>">
